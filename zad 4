@@ -1,0 +1,51 @@
+import random
+
+def draw_diamond(size):
+   
+if size < 3 or size % 2 == 0:
+       
+print("Nieprawidłowy rozmiar! Podaj liczbę nieparzystą większą lub równą 3.")
+
+return
+
+outer_symbols = ['#', '@', '|', '*']
+
+inner_symbols = ['.', ':', '-', '+']
+
+outer_symbol = random.choice(outer_symbols)
+
+inner_symbol = random.choice(inner_symbols)
+
+half_size = size // 2
+
+for row in range(size):
+
+if row <= half_size:
+
+num_symbols = row * 2 + 1
+
+else:
+
+num_symbols = (size - row) * 2 - 1
+
+num_spaces = half_size - row
+
+line = ' ' * num_spaces + outer_symbol + inner_symbol * (num_symbols - 2) + outer_symbol
+
+print(line)
+
+print()
+
+attempts = 0
+
+while attempts < 3:
+
+size = int(input("Podaj rozmiar rombu (liczba nieparzysta >= 3): "))
+
+draw_diamond(size)
+
+attempts += 1
+
+if size >= 3 and size % 2 == 1:
+
+break
