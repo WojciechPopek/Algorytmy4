@@ -1,0 +1,17 @@
+def draw_triangle(height):
+    
+width = height * 2 - 1
+
+for i in range(height):
+
+line = '+' * (i * 2 + 1)
+
+line = line.center(width)
+
+print(line)
+
+height = int(input("Podaj wysokość trójkąta: "))
+
+print("Trójkąt złożony ze znaków '+':")
+
+draw_triangle(height)
